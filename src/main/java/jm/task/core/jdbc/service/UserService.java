@@ -2,10 +2,11 @@ package jm.task.core.jdbc.service;
 
 import jm.task.core.jdbc.model.User;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface UserService {
-    void createUsersTable();
+    void createUsersTable() throws IOException;
 
     void dropUsersTable();
 
