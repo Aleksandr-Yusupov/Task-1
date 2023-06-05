@@ -11,10 +11,10 @@ public class UserServiceImpl implements UserService {
 
     private UserDao userDao = new UserDaoHibernateImpl();
 
-    public UserServiceImpl() throws IOException {
+    public UserServiceImpl() {
     }
 
-    public void createUsersTable() throws IOException {
+    public void createUsersTable() {
         userDao.createUsersTable();
     }
 

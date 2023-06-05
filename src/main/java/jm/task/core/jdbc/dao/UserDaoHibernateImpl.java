@@ -7,7 +7,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import javax.persistence.PersistenceException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,8 +15,12 @@ import static jm.task.core.jdbc.util.Util.getSessionFactory;
 public class UserDaoHibernateImpl implements UserDao {
     SessionFactory sessionFactory;
 
-    public UserDaoHibernateImpl() throws IOException {
-        sessionFactory = getSessionFactory();
+    public UserDaoHibernateImpl() {
+        try {
+            sessionFactory = getSessionFactory();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
